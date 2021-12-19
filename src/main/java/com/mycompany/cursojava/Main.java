@@ -50,9 +50,12 @@ Integer age = 20;
        InputStreamReader writeToConsole = new InputStreamReader(System.in); //From the new a new data is being created
        BufferedReader buffer = new BufferedReader(writeToConsole);
        System.out.println("Hey you! What is your name?");
-       String yourname = buffer.readLine();
+       String yourname = buffer.readLine();//the buffer has a lot of actions
        System.out.println("Hello " + yourname + " nice to me you");
        
+       System.out.println("And how ols are you?");
+       String yourage = buffer.readLine();//the buffer has a lot of actions
+       System.out.println("Oh " + yourage + " it's a good age");
  
     }
 }
