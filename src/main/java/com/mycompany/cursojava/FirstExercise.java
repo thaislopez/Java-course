@@ -19,21 +19,32 @@ public class FirstExercise {
     which is the largest and the smallest*/
     
     public static void main(String[] args) throws IOException {
-        InputStreamReader writeToConsole = new InputStreamReader(System.in);
-        BufferedReader buffer = new BufferedReader(writeToConsole);
-        
+     
         System.out.println("enter the first number");
-        String strNumber1 = buffer.readLine(); //This line saves the number entered
-        Integer number1 = Integer.parseInt(strNumber1); //What this line does is pass text to a whole number
+        Integer number1 = loadNumber(); //What this line does is pass text to a whole number
         
         System.out.println("enter the second number");
-        String strNumber2 = buffer.readLine();
-        Integer number2 = Integer.parseInt(strNumber2);
+        Integer number2 = loadNumber();
         
         System.out.println("enter the third number");
-        String strNumber3 = buffer.readLine();
-        Integer number3 = Integer.parseInt(strNumber3);
+        Integer number3 = loadNumber();
         
+        calculateGreaterNumber(number1, number2, number3);
+        calculateSmallerNumber(number1, number2, number3);
+    }
+    
+    private static Integer loadNumber () throws IOException {
+        InputStreamReader writeToConsole = new InputStreamReader(System.in);
+        BufferedReader buffer = new BufferedReader(writeToConsole);
+        String strNumber1 = buffer.readLine();
+        Integer number1 = Integer.parseInt(strNumber1);
+        
+        return number1;
+        
+    }
+       
+    private static void calculateGreaterNumber(Integer number1, Integer number2, Integer number3) {
+              
         Integer mayor = number1;
         
         if(number2 > mayor) {
@@ -44,6 +55,10 @@ public class FirstExercise {
         }
         System.out.println("the greater number is: " + mayor);
         
+    }
+    
+    private static void calculateSmallerNumber(Integer number1, Integer number2, Integer number3) {
+        
         Integer menor = number1;
         
         if(number2 < menor) {
@@ -53,6 +68,7 @@ public class FirstExercise {
             menor = number3;
         }
         System.out.println("the smallest number is: " + menor);
+        
     }
-    
+           
 }
